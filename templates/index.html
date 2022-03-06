@@ -1,16 +1,338 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- FontAwesome 5.15.3 CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- (Optional) Use CSS or JS implementation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <title>Auction Site</title>
-</head>
-<body>
-    <h1 style="text-align: center;">Welcome {% if user.isauthenticated %}{{user}} {% else %} dear user {% endif %} to our AUCTION SITE</h1>
-</body>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Speed</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+      <!-- style css -->
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+      <!-- fevicon -->
+      <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+      
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="{% url  'index' %}">Home</a>
+  <a href="{% url  'about' %}">About</a>
+  <a href="{% url  'product' %}">gallery</a>
+  <a href="">testimonial</a>
+  <a href="{% url  'contact' %}">Contact</a>
+</div>
+<div id="main">
+      <!-- header section start -->
+      <div class="header_section">
+        <div class="container-fluid">
+         <div class="row">
+            <div class="col-sm-4">
+               <div class="search_icon"><img src="{% static 'images/search-icon.png' %}"></div>
+            </div>
+            <div class="col-sm-4">
+               <div class="logo"><img src="{% static 'images/logo.png' %}"></div>
+            </div>
+            <div class="col-sm-4">
+               <div class="togle_3">
+                  <div class="left_main">
+                     <div class="menu_main">
+                        <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+                     </div>
+                  </div>
+                  <div class="middle_main">
+                     <div class="shoping_bag"><img src="{% static 'images/shopping-bag.png' %}"></div>
+                  </div>
+                  <div class="right_main">
+                     <div class="togle_main"><a class="class="openbtn onclick="openNav()"><img src="{% static 'images/togle-menu-icon.png' %}" style="max-width: 100%;"></a></div>
+                  </div>
+               </div>
+               </div>
+            </div>
+         </div>
+      <div class="banner_section layout_padding">
+      <div class="container">
+      <section >
+         <div id="main_slider" class="section carousel slide banner-main" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#main_slider" data-slide-to="0" class="active"></li>
+               <li data-target="#main_slider" data-slide-to="1"></li>
+               <li data-target="#main_slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container">
+                     <div class="row marginii">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                           <div class="carousel-sporrt_text ">
+                              <h1 class="sport_text"><strong>Sports<br><span style="color: #fff;">Cycle</span></strong></h1>
+                              <p class="lorem_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content</p>
+                              <button class="boynow_bt">Boy Now</button>
+                              <button class="contact_bt">Contact Us</button>
+                           </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                           <div class="img-box">
+                              <figure><img src="{% static 'images/img-1.png' %}" style="max-width: 100%;"/></figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="container">
+                     <div class="row marginii">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                           <div class="carousel-sporrt_text ">
+                              <h1 class="sport_text"><strong>Sports<br><span style="color: #fff;">Cycle</span></strong></h1>
+                              <p class="lorem_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content</p>
+                              <button class="boynow_bt">Boy Now</button>
+                              <button class="contact_bt">Contact Us</button>
+                           </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                           <div class="img-box">
+                              <figure><img src="{% static 'images/img-1.png' %}" style="max-width: 100%;"/></figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="row marginii">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                           <div class="carousel-sporrt_text ">
+                              <h1 class="sport_text"><strong>Sports<br><span style="color: #fff;">Cycle</span></strong></h1>
+                              <p class="lorem_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content</p>
+                              <button class="boynow_bt">Boy Now</button>
+                              <button class="contact_bt">Contact Us</button>
+                           </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                           <div class="img-box">
+                              <figure><img src="{% static 'images/img-1.png" style="max-width: 100%;"/></figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      </div>
+      </div>
+   </div>
+   </div>
+   <!-- about section start -->
+   <div class="container-fluid">
+   <div class="about_section">
+      <div class="container">
+         <div class="about_img"><img src="{% static 'images/about-img1.png' %}" style="max-width: 100%;"></div>
+         <h2 class="about_text"><strong>About <span style="color: #000;">Us</span></strong></h2>
+         <div class="about_middle">
+            <p class="about_lorem">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it </p>
+         </div>
+         <div class="red_bt">
+            <button class="read_more">Read More</button>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- about section end -->
+   <!-- our section start -->
+   <div class="our_section">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12">
+               <h1 class="our_text"><strong>Our <span style="color: #000;">Cycles</span></strong></h1>
+               <p class="about_lorem">t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p>
+            </div>
+         </div>
+      </div>
+      <div class="our_section_2">
+         <div class="our_main">
+            <div id="my_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <img class="d-block w-100" src="{% static 'images/our-img-1.png' %}" alt="First slide">
+               </div>
+               <div class="carousel-item">
+                  <img class="d-block w-100" src="{% static 'images/our-img-1.png' %}" alt="Second slide">
+               </div>
+               <div class="carousel-item">
+                 <img class="d-block w-100" src="{% static 'images/our-img-1.png' %}" alt="Third slide">
+               </div>
+            </div>
+               <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                 <span class="sr-only">Previous</span>
+               </a>
+               <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                 <span class="sr-only">Next</span>
+               </a>
+            </div>
+          </div>
+          <button class="seemore_bt">See More</button>
+      </div>
+   </div>
+   <div class="contact_section layout_padding">
+      <div class="container">
+         <h1 class="contact_text"><strong>Contact Us</strong></h1>
+      </div>
+            <div class="contact_main">
+               <div class="enput_section">
+                  <div class="email_box">
+                    <div class="input_main">
+                       <div class="container">
+                          <form action="/action_page.php">
+                            <div class="form-group">
+                              <input type="text" class="email-bt" placeholder="Name" name="Name">
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="email-bt" placeholder="Email" name="Name">
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="email-bt" placeholder="Phone Numbar" name="Email">
+                            </div>
+                            
+                            <div class="form-group">
+                                <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
+                            </div>
+                          </form>   
+                       </div> 
+                       <div class="send_btn">
+                        <button type="button" class="main_bt"><a href="#">Send</a></button>
+                       </div>                   
+                    </div>
+                 </div>
+               </div>
+            </div>
+   </div>
+   <!-- our section end -->
+   <!-- Testimonial section start -->
+   <div class="testimonial_section layout_padding">
+      <div class="container">
+         <h1 class="contact_text"><strong>Testimonial</strong></h1>
+         <p class="dolore_text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna  </p>
+         <div class="images_3"><img src="{% static 'images/img-3.png' %}"></div>
+         <h2 class="rooty_text">Rooty</h2>
+         <p class="ice_text">(lcc)</p>
+         <div><img src="{% static 'images/left-quote.png' %}"></div>
+         <p class="dolore_text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore  , quis nostrud exercitation </p>
+         <div class="right_quote"><img src="{% static 'images/right-quote.png' %}"></div>
+      </div> 
+   </div>
+
+   <!-- Testimonial section end -->
+   <!-- footer section start -->
+   <div class="footer_section layout_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-4">
+               <h2 class="important_text">Important Link</h2>
+               <div class="footer_menu">
+                  <ul>
+                     <li><a href="#">Home</a></li>
+                     <li><a href="#">About Us</a></li>
+                     <li><a href="#">Our Latest Event</a></li>
+                     <li><a href="#">Our Latest Article</a></li>
+                     <li><a href="#">Join With Us</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-sm-4">
+               <h2 class="important_text">Social Link</h2>
+               <div class="footer_menu">
+                  <ul>
+                     <li><a href="#">Facebook</a></li>
+                     <li><a href="#">Linkedin</a></li>
+                     <li><a href="#">Twitter</a></li>
+                     <li><a href="#">Youtube</a></li>
+                     <li><a href="#">Pinterest</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-sm-4">
+               <h2 class="important_text">Subscribe With Us</h2>
+               <p class="footer_lorem_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga</p>
+               <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="text" aria-label="Recipient's username" aria-describedby=" basic-addon2">
+                  <div class="input-group-append">
+                     <span class="input-group-text" id="basic-addon2">Subscribe</span>
+                  </div>
+               </div>
+            </div>
+         </div>   
+      </div>
+   </div>
+   <!-- footer section start -->
+   <!-- copyright section start -->
+   <div class="copyright_text">Copyright 2019 All Right Reserved By. <a href="https://html.design"> Free Html Templates</a></div>
+
+   </div>
+
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+         openEffect: "none",
+         closeEffect: "none"
+         });
+       $('#myCarousel').carousel({
+            interval: false
+        });
+      </script>
+
+      <script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+   </body>
 </html>
