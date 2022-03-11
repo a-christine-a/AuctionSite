@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    {% if category %}{{ category.title }}{% else %}Products{% endif %}
+{% endblock %}
+{% block content %}
+ <!-- Begin Li's Breadcrumb Area -->
+<div class="row p-2">
+    <a class="ml-2" href="{% url 'product_list' %}">Home > </a>
+    <a class="ml-2 mr-2" href="{{ product.category.get_absolute_url }}">{{ product.category}} > </a>
+    {{product.name}}
+</div>
+<!-- Li's Breadcrumb Area End Here -->
+<!-- content-wraper start -->
+<div class="content-wraper bg-light">
+    <div class="container">
+        <div class="row single-product-area">
+            <div class="col-lg-5 col-md-6">
+               <!-- Product Details Left -->
+                <div class="product-details-left">
+                    <div class="product-details-images slider-navigation-1">
+                        <div class="lg-image">
+                            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" class="card-img">
+                        </div>
+                    </div>
+                </div>
+                <!--// Product Details Left -->
+            </div>
+
+            <div class="col-lg-7 col-md-6">
+                <div class="product-details-view-content sp-affiliate-content pt-60">
+                    <div class="product-info">
+                        <h1>{{product.name}}</h1>
+                        <h3>Category: <span class="text-gray"><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h3> 
+                        <div class="price-box pt-20">
+                            <span class="new-price new-price-2">{{product.price}}</span>
+                        </div>
+                        <div class="product-desc">
+                            <p>
+                                <span>{{ product.description|linebreaks }}</span> <br>
+                                Number of items left : {{product.stock}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+<!-- content-wraper end -->
+
+{% endblock %}

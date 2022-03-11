@@ -20,28 +20,20 @@
             </div>
         {% endfor %}
       {% endif %}
-      <div class="bg-success">
-        <strong>Menu:</strong>
-        <ul>
-          {% if user.is_authenticated %}
-          <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
-          <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
-          {% else %}
-          <li><a href="{% url 'account_login' %}">Sign In</a></li>
-          <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
-          {% endif %}
-        </ul>
-      </div>
-      <a href="/">Home</a>
       {% include 'partials/_navbar.html' %}
       {% block content %}
       {% endblock %}
       {% endblock %}
       {% block extra_body %}
       {% endblock %}
-    <script src="{% static 'vendor/bootstrap/js/bootstra.js' %}"></script>
-    <script src="{% static 'vendor/bootstrap/js/bootstrap.js.map' %}"></script>
-    <script src="{% static 'vendor/fontawesome-free/js/all.js' %}"></script>
-    <script src="{% static 'vendor/jquery/jquery.js' %}"></script>
-    <script src="{% static 'vendor/jquery-easing/jquery.easing.js' %}"></script>
+      {% include 'partials/_footer.html' %}
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static '/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static '/vendor/bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static '/vendor/bootstrap/js/bootstra.js' %}"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'vendor/fontawesome-free/js/all.min.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>    
 </body>

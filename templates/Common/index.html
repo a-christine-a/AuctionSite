@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container-fluid bg-primary">
+    <div class="row">
+        <div class="col-md-12 text-center p-3 text-white">
+            <h1 class="font-weight-bold">55AUCTION AUCTION SITE</h1>
+            <p style="letter-spacing: 3px; padding: 15px;">This is the best site for you where you can do your bidding , the products postd for bidding are of high quality</p>
+            <p class="btn btn-outline-light">Keep in touch</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        {% for product in products %}
+            <div class="card m-2 shadow" style="max-width: 200px;">
+                <img class="card-img" src="{{ product.image.url }}" alt="">
+                <h3 class="card-header">{{ product.name }}</h3>
+                <p class="card-body p-1 m-0">Starting at <span class="text-success">Ksh. {{ product.price }}</span></p>
+                <a class="btn btn-outline-primary btn-sm m-3" href="{{ product.get_absolute_url }}">Bid Now</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

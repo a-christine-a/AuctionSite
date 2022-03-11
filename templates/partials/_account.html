@@ -5,13 +5,13 @@
     <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="mr-2 d-none d-lg-inline text-primary-600 small">{{user.username}}</span>
-                <img  class="img-profile rounded-circle" src="">
+                <img  class="img-profile rounded-circle" src="{% static 'img/undraw_profile.svg' %}">
         </a>
         <!-- Dropdown - User Information -->
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
             aria-labelledby="userDropdown">
             <span class="justify-content-center d-block text-center shadow card-header">
-                <img  class="img-profile rounded-circle" height="50px" width="50px" src="">
+                <img  class="img-profile rounded-circle" height="50px" width="50px" src="{% static 'img/undraw_profile.svg' %}">
                 <a href="" class="dropdown-item" >{{user.username}}</a>
             </span>
             <a class="dropdown-item" href="">
