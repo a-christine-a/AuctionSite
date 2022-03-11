@@ -1,0 +1,87 @@
+{% if user.is_superuser %}
+
+<nav class="navbar navbar-expand navbar-light bg-dark topbar static-top shadow">
+    <!-- Nav Item - User Information -->
+    <ul class="navbar bg-secondary text-light">
+        ADMIN NAVBAR welcome, {{user}},
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-white">API</span>
+
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--glow-in"aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="/api/">API</a>
+                <a class="dropdown-item" href="{% url 'courses:subject_list' %}">Subjects API</a>
+                <a class="dropdown-item" href="/api/courses/">Courses API</a>
+                <a class="dropdown-item" href="{% url 'contact' %}#location">Content API</a>
+                <a class="dropdown-item" href="{% url 'contact' %}">Enroll Course API</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-white">Basics</span>
+
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="userDropdown">
+                <a href="{% url 'admin:index' %}" class="dropdown-item">Index</a>
+                <a href="/admin/sites/site/" class="dropdown-item">Manage sites</a>
+                <a href="/admin/auth/user/" class="dropdown-item">Manage Users</a>
+                <a href="/admin/auth/group/" class="dropdown-item">Manage Groups</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-white">Accounts</span>
+
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="/admin/account/emailaddress/">Manage Emails</a>
+                <a href="/admin/accounts/subscribe/" class="dropdown-item">Manage subscriptions</a>
+                <a href="/admin/accounts/contact/" class="dropdown-item">View Feedbacks</a>
+                <a href="/admin/accounts/user_profile/" class="dropdown-item">Manage Profiles</a>
+                <a href="/admin/accounts/main_app_details/" class="dropdown-item">Site Contact Details</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-white">E-School</span>
+
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="userDropdown">
+                <a href="/admin/eschool/subject/" class="dropdown-item">Manage Subjects</a>
+                <a href="/admin/eschool/course/" class="dropdown-item">Manage Courses</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-white">E-Comerce</span>
+
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="userDropdown">
+                <a href="/admin/ecomerce/category" class="dropdown-item">Manage Category</a>
+                <a href="/admin/ecomerce/product/" class="dropdown-item">Manage Product</a>
+                <a href="/admin/ecomerce/team/" class="dropdown-item">Manage Team</a>
+                <a href="/admin/orders/order/" class="dropdown-item">Manage Orders</a>
+                <a href="/admin/ipn/paypalipn/" class="dropdown-item">Manage Payments</a>
+                <a href="/admin/coupons/coupon/" class="dropdown-item">Manage Coupons</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+{% endif %}

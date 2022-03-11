@@ -1,0 +1,42 @@
+<!-- Footer -->
+{% load static%}
+<footer class="py-3" style="background-color: black;">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-sm-6">
+              <h5 class="text-primary">Smart-Tech</h5>
+            <p><a class="text-light" href="{% url 'about' %}">About Us</a></p>
+            <p><a class="text-light" href="{% url 'service' %}">Services</a></p>
+            <p><a class="text-light" href="{% url 'contact' %}">Contact Us</a></p>
+            <p><a class="text-light" href="{% url 'subscribe' %}">Subscribe</a></p>
+            <p><a class="text-light" href="https://docs.google.com/forms/d/e/1FAIpQLSc5-xUHtHeQg1X3j_d-_sKvx8xUXmj7Yzl1xoOf9BiXAi9epw/viewform?usp=send_form">Join Our Staff</a></p>
+              <button type="button" class="btn btn-sm btn-primary" onClick="history.back()"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Back</button>
+              <button class="btn btn-sm btn-primary m-2" onclick="history.forward()">Next <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+          </div>
+          <div class="col-sm-6">
+            <h5 class="text-primary">Smart-Tech Services</h5>
+            <p><a class="text-light" href="{% url 'blog:post_list' %}">Smart-Tech Blog</a></p>
+            <p><a class="text-light" href="{% url 'eschool_index' %}">E-School</a></p>
+            <p><a class="text-light" href="{% url 'shop:product_list' %}">E-comerce</a></p>
+            <p><a class="text-light" href="{% url 'cv:index' %}">Cv Generator</a></p>
+            <p><a class="text-light" href="maito:theprogrammerjeff@gmail.com">E-Help and Support</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <figure class="text-center">
+        <img src="{% static 'img/Smart Tech.gif' %}" alt="..." class="img-fluid" style="border: none;" title="{{basic.name}}">
+        <figcaption>
+          <a class="text-light ml-2" href="tel:+254795067776">Call</a> <a class="text-light ml-2" href="mailto:smarttech.allservices@gmail.com">Send Mail</a><a class="text-light ml-2" href="sms:+254795067776">Send Sms</a>
+        </figcaption>
+      </figure>
+  </div>
+    </div>
+  </div>
+    <div class="container">
+      <p class="m-0 text-center text-primary-1 t-h">Copyright &copy; Smart-Tech - {% now "Y" %}</p>
+    </div>
+    <!-- /.container -->
+  </footer>
