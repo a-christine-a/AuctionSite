@@ -1,15 +1,13 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Product, Team
+from .models import Category, Product, Team,Contact
 from django.views.generic import CreateView
 
 # Create your views here.
-def index(request):
-    return render(request, "base.html")
-
 def about(request):
-    return render(request, "about.html")
+    return render(request, "Common/about.html")
 
 def contact(request):
+    
     return render(request, "Common/contact.html")
 
 def product_list(request, category_slug=None):
@@ -32,7 +30,7 @@ def about(request):
 
     return render(
         request, 
-        'ecomerce/about us.html',
+        'Common/about us.html',
         {
             'team':team,
     })

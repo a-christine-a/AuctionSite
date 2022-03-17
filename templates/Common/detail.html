@@ -6,7 +6,7 @@
 {% block content %}
  <!-- Begin Li's Breadcrumb Area -->
 <div class="row p-2">
-    <a class="ml-2" href="{% url 'product_list' %}">Home > </a>
+    <a class="ml-2" href="/">Home > </a>
     <a class="ml-2 mr-2" href="{{ product.category.get_absolute_url }}">{{ product.category}} > </a>
     {{product.name}}
 </div>
