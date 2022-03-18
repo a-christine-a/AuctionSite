@@ -15,9 +15,9 @@
                     <form action="" method="post" spellcheck="true">
                         {% csrf_token %}
                         {{form|crispy}}
-                        <button type="submit" class="btn btn-dft text-white">Subscribe</button>
+                        <button type="submit" class="btn btn-outline-primary">Submit</button>
                         <button type="reset" class="btn btn-secondary">Reset</button>
-                        <a href="{% url 'index' %}"class="btn btn-light">Cancel</a>
+                        <a href="{% url 'index' %}"class="btn btn-success">Cancel</a>
                     </form>
                 </div>
             </div>

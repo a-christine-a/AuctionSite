@@ -6,10 +6,6 @@ from django.views.generic import CreateView
 def about(request):
     return render(request, "Common/about.html")
 
-def contact(request):
-    
-    return render(request, "Common/contact.html")
-
 def product_list(request, category_slug=None):
     category = None
     categories = Category.objects.all()
@@ -38,7 +34,12 @@ def about(request):
 class JoinTeam(CreateView):
     model = Team
     fields = 'img','name','position','email','fb_link','twitter_link','whatsapp_link','linkedin'
-    template_name = 'ecomerce/join team.html'
+    template_name = 'Common/join team.html'
 
 def app_success(request):
-    return render(request, 'ecomerce/success.html')
+    return render(request, 'Common/success.html')
+
+class ContactView(CreateView):
+    model = Contact
+    fields = '__all__'
+    template_name = 'Common/contact.html'
